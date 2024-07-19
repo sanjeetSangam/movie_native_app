@@ -37,10 +37,9 @@ const MovieList = ({ title, data, hideSeeAll = false }) => {
 				contentContainerStyle={{ paddingHorizontal: 15 }}
 			>
 				{data.map((movie) => {
-					const movieName = movie?.title;
 					return (
 						<TouchableWithoutFeedback
-							key={movie.id}
+							key={movie?.id}
 							onPress={() => navigation.push("Movie", movie)}
 						>
 							<View className="space-y-1 mr-4">
@@ -53,9 +52,9 @@ const MovieList = ({ title, data, hideSeeAll = false }) => {
 									}}
 								/>
 								<Text className="text-neutral-300 ml-1 text-center">
-									{movieName?.length > 14
-										? movieName.slice(0, 14) + "..."
-										: movieName}
+									{movie?.title?.length > 14
+										? movie.title.slice(0, 14) + "..."
+										: movie.title}
 								</Text>
 							</View>
 						</TouchableWithoutFeedback>

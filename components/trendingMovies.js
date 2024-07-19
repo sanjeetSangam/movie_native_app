@@ -26,10 +26,9 @@ const TrendingMovies = ({ trending }) => {
 				vertical={false}
 				data={trending}
 				scrollAnimationDuration={1000}
-				onSnapToItem={(index) => console.log("current index:", index)}
 				renderItem={({ item }) => <MovieCard item={item} handleClick={handleClick} />}
 				loop
-				// autoPlay={true}
+				autoPlay={true}
 			/>
 		</View>
 	);

@@ -22,7 +22,6 @@ const SearchScreen = () => {
 	const [results, setResults] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const navigation = useNavigation();
-	let movieName = "Aawara Pagal Deewana";
 
 	const handleSearch = (value) => {
 		if (value && value.length > 2) {
@@ -79,7 +78,7 @@ const SearchScreen = () => {
 						{results?.map((item, index) => {
 							return (
 								<TouchableWithoutFeedback
-									key={index}
+									key={item?.id}
 									onPress={() => navigation.push("Movie", item)}
 								>
 									<View className="space-y-2 mb-4">

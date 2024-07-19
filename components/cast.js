@@ -3,9 +3,6 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { image185 } from "../api/moviedb";
 
 const Cast = ({ cast, navigation }) => {
-	let personName = "John Wick";
-	let characterName = "John Cipher";
-
 	return (
 		<View className="my-6">
 			<Text className="text-white text-lg mx-4 mb-5">Top Casts</Text>
@@ -19,7 +16,7 @@ const Cast = ({ cast, navigation }) => {
 					cast.map((person, index) => {
 						return (
 							<TouchableOpacity
-								key={index}
+								key={person?.id}
 								className="mr-4 items-center"
 								onPress={() => navigation.navigate("Person", person)}
 							>
